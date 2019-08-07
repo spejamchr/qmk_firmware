@@ -28,12 +28,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define MASTER_RIGHT
 // #define EE_HANDS
 
-#define SSD1306OLED
+// I'm not using OLED screens, so disable this
+/* #define SSD1306OLED */
 
 #define USE_SERIAL_PD2
 
-#define TAPPING_FORCE_HOLD
-#define TAPPING_TERM 100
+// I don't have these on my Nyquist, so I'll leave them off here, too
+/* #define TAPPING_FORCE_HOLD */
+/* #define TAPPING_TERM 100 */
 
 #undef RGBLED_NUM
 #define RGBLIGHT_ANIMATIONS

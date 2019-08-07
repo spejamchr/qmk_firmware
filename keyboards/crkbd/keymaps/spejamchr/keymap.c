@@ -39,70 +39,65 @@ enum macro_keycodes {
   KC_SAMPLEMACRO,
 };
 
+// Fillers to make layering more clear
 #define KC______ KC_TRNS
 #define KC_XXXXX KC_NO
 #define KC_LOWER LOWER
 #define KC_RAISE RAISE
+#define KC_ADJST ADJUST
 #define KC_RST   RESET
-#define KC_LRST  RGBRST
-#define KC_LTOG  RGB_TOG
-#define KC_LHUI  RGB_HUI
-#define KC_LHUD  RGB_HUD
-#define KC_LSAI  RGB_SAI
-#define KC_LSAD  RGB_SAD
-#define KC_LVAI  RGB_VAI
-#define KC_LVAD  RGB_VAD
-#define KC_LMOD  RGB_MOD
-#define KC_CTLTB CTL_T(KC_TAB)
-#define KC_GUIEI GUI_T(KC_LANG2)
-#define KC_ALTKN ALT_T(KC_LANG1)
+#define KC_VOLDN KC__VOLDOWN
+#undef KC_MUTE
+#define KC_VOLUP KC__VOLUP
+#define KC_MUTE KC__MUTE
+#define KC_EscCtl LCTL_T(KC_ESC) // Esc when tapped, Ctrl when held
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-        ESC,     Q,     W,     E,     R,     T,                      Y,     U,     I,     O,     P,  BSPC,\
+        TAB,     Q,     W,     E,     R,     T,                      Y,     U,     I,     O,     P,  BSPC,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      CTLTB,     A,     S,     D,     F,     G,                      H,     J,     K,     L,  SCLN,  QUOT,\
+     EscCtl,     A,     S,     D,     F,     G,                      H,     J,     K,     L,  SCLN,  QUOT,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LSFT,     Z,     X,     C,     V,     B,                      N,     M,  COMM,   DOT,  SLSH,  RSFT,\
+       LSFT,     Z,     X,     C,     V,     B,                      N,     M,  COMM,   DOT,  SLSH,   ENT,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  GUIEI, LOWER,   SPC,      ENT, RAISE, ALTKN \
+                                   LALT,  LGUI,  LSFT,      SPC, RAISE, LOWER \
                               //`--------------------'  `--------------------'
   ),
 
   [_LOWER] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-        ESC,     1,     2,     3,     4,     5,                      6,     7,     8,     9,     0,  BSPC,\
+      XXXXX,    F1,    F2,    F3,    F4,    F5,                     F6,    F7,    F8,    F9,   F10, XXXXX, \
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      CTLTB,    F1,    F2,    F3,    F4,    F5,                     F6,    F7,    F8,    F9,   F10, XXXXX,\
+        ESC,   F11,   F12,  MRWD,  MFFD,  MPLY,                   LEFT,  DOWN,    UP,  RGHT, XXXXX, XXXXX, \
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LSFT,   F11,   F12,   F13,   F14,   F15,                    F16,   F17,   F18,   F19,   F20, XXXXX,\
+      XXXXX, XXXXX, XXXXX, VOLDN, VOLUP,  MUTE,                   HOME,  PGDN,  PGUP,   END, XXXXX, XXXXX,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  GUIEI, LOWER,   SPC,      ENT, RAISE, ALTKN \
+                                  _____, _____, _____,    XXXXX, ADJST, _____ \
                               //`--------------------'  `--------------------'
   ),
 
   [_RAISE] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-        ESC,  EXLM,    AT,  HASH,   DLR,  PERC,                   CIRC,  AMPR,  ASTR,  LPRN,  RPRN,  BSPC,\
+        GRV,     1,     2,     3,     4,     5,                      6,     7,     8,     9,     0, _____,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      CTLTB, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,                   MINS,   EQL,  LCBR,  RCBR,  PIPE,   GRV,\
+      _____, XXXXX, XXXXX, XXXXX, XXXXX,  LPRN,                   RPRN,  MINS,   EQL,  LCBR,  RBRC,  BSLS,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LSFT, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,                   UNDS,  PLUS,  LBRC,  RBRC,  BSLS,  TILD,\
+      _____, XXXXX, XXXXX, XXXXX,  LBRC, XXXXX,                  XXXXX,  RBRC, _____, _____, _____, _____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  GUIEI, LOWER,   SPC,      ENT, RAISE, ALTKN \
+                                  _____, _____, _____,    _____, _____, ADJST \
                               //`--------------------'  `--------------------'
   ),
 
   [_ADJUST] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-        RST,  LRST, XXXXX, XXXXX, XXXXX, XXXXX,                  XXXXX, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,\
+        RST, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,                  XXXXX, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LTOG,  LHUI,  LSAI,  LVAI, XXXXX, XXXXX,                  XXXXX, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,\
+      XXXXX, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,                  XXXXX, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LMOD,  LHUD,  LSAD,  LVAD, XXXXX, XXXXX,                  XXXXX, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,\
+      XXXXX, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,                  XXXXX, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  GUIEI, LOWER,   SPC,      ENT, RAISE, ALTKN \
+                                  _____, _____, _____,    _____, _____, _____ \
                               //`--------------------'  `--------------------'
   )
 };
