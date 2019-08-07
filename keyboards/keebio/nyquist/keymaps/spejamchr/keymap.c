@@ -98,19 +98,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |      |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  |  F10 |      |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * | ESC  |  F11 |  F12 |  F13 |  F14 |  F15 | Left | Down |  Up  |Right |      |      |
+ * | ESC  |  F11 |  F12 | Prev | Next | Play | Left | Down |  Up  |Right |      |      |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * |      |      |      | Vol- | Vol+ | Mute | Home | PgDn | PgUp | End  |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      | Prev | Next | Play |      |      |      |      |      |      |
+ * |      |      |      | Alt  | GUI  |Shift | XXXX |Adjust| XXXX |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT( \
   XXXXXXX, KC_F1,   KC_F2,   KC_F3,       KC_F4,     KC_F5,    KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  XXXXXXX, \
   XXXXXXX, KC_F1,   KC_F2,   KC_F3,       KC_F4,     KC_F5,    KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  XXXXXXX, \
-  KC_ESC,  KC_F11,  KC_F12,  KC_F13,      KC_F14,    KC_F15,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, XXXXXXX, \
+  KC_ESC,  KC_F11,  KC_F12,  KC_MRWD,     KC_MFFD,   KC_MPLY,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, XXXXXXX, \
   XXXXXXX, XXXXXXX, XXXXXXX, KC__VOLDOWN, KC__VOLUP, KC__MUTE, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  XXXXXXX, XXXXXXX, \
-  XXXXXXX, XXXXXXX, XXXXXXX, KC_MRWD,     KC_MFFD,   KC_MPLY,  XXXXXXX, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX \
+  XXXXXXX, XXXXXXX, XXXXXXX, _______,     _______,   _______,  XXXXXXX, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX \
 ),
 
 /* Raise
@@ -123,7 +123,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * |      |      |      |      |   [  |      |      |   ]  |      |      |      |Enter |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |             |      |      |      |      |      |
+ * |      |      |      | Alt  | GUI  |Shift |Space | XXXX |Adjuts|      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_RAISE] = LAYOUT( \
