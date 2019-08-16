@@ -1,3 +1,6 @@
+// To use:
+//   make crkbd:spejamchr:avrdude
+
 #include QMK_KEYBOARD_H
 #include "bootloader.h"
 #ifdef PROTOCOL_LUFA
@@ -81,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------.                ,-----------------------------------------.
         GRV,     1,     2,     3,     4,     5,                      6,     7,     8,     9,     0, _____,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      _____, XXXXX, XXXXX, XXXXX, XXXXX,  LPRN,                   RPRN,  MINS,   EQL,  LCBR,  RBRC,  BSLS,\
+      _____, XXXXX, XXXXX, XXXXX, XXXXX,  LPRN,                   RPRN,  MINS,   EQL,  LBRC,  RBRC,  BSLS,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       _____, XXXXX, XXXXX, XXXXX,  LBRC, XXXXX,                  XXXXX,  RBRC, _____, _____, _____, _____,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
