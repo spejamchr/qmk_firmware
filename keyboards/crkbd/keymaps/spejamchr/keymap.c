@@ -54,6 +54,9 @@ enum macro_keycodes {
 #define KC_VOLUP KC__VOLUP
 #define KC_MUTE KC__MUTE
 #define KC_EscCtl LCTL_T(KC_ESC) // Esc when tapped, Ctrl when held
+#define KC_BACK HYPR(KC_B)
+#define KC_NEXT HYPR(KC_N)
+#define KC_PLAY HYPR(KC_P)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_kc( \
@@ -72,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------.                ,-----------------------------------------.
       XXXXX,    F1,    F2,    F3,    F4,    F5,                     F6,    F7,    F8,    F9,   F10, XXXXX, \
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-        ESC,   F11,   F12,  MRWD,  MFFD,  MPLY,                   LEFT,  DOWN,    UP,  RGHT, XXXXX, XXXXX, \
+        ESC,   F11,   F12,  BACK,  NEXT,  PLAY,                   LEFT,  DOWN,    UP,  RGHT, XXXXX, XXXXX, \
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       XXXXX, XXXXX, XXXXX, VOLDN, VOLUP,  MUTE,                   HOME,  PGDN,  PGUP,   END, XXXXX, XXXXX,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
